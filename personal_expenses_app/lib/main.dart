@@ -42,27 +42,45 @@ class MyHomePage extends StatelessWidget {
               children: transactions.map((tx) {
                 return Card(
                   child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 2,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.purple,
+                            width: 2,
+                          ),
+                        ),
+                        margin: EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8),
+                        child: Text(
+                          tx.amount.toString(),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.purple),
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            tx.title,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
                             ),
                           ),
-                          padding: EdgeInsets.all(8),
-                          child: Text(tx.amount.toString()),
-                        ),
-                        Column(
-                          children: [
-                            Text(tx.title),
-                            Text(
-                              tx.date.toString(),
-                            )
-                          ],
-                        )
-                      ]),
+                          Text(
+                            tx.date.toString(),
+                            style: TextStyle(
+                              fontSize: 8,
+                              color: Colors.grey,
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                   elevation: 5,
                 );
               }).toList()),
