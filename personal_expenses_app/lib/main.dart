@@ -44,7 +44,16 @@ class MyHomePage extends StatelessWidget {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(tx.amount.toString()),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 2,
+                            ),
+                          ),
+                          padding: EdgeInsets.all(8),
+                          child: Text(tx.amount.toString()),
+                        ),
                         Column(
                           children: [
                             Text(tx.title),
