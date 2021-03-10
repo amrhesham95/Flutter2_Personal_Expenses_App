@@ -47,7 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
         context: ctx,
         builder: (_) {
           return TransactionInput(
-              handler: (title, amount) => {addNewTransaction(title, amount)});
+              handler: (String title, double amount) =>
+                  {addNewTransaction(title, amount)});
         });
   }
 
