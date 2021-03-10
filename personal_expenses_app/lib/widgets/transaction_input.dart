@@ -2,14 +2,24 @@ import 'package:flutter/material.dart';
 
 class TransactionInput extends StatelessWidget {
   final Function handler;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
 
   TransactionInput({@required this.handler});
+  void submitData() {
+    var title = titleController.text;
+    var amount = amountController.text;
+
+    if (title.isEmpty || amount.isEmpty) {
+      print("please enter valid data");
+      return;
+    }
+
+    handler(title, amount);
+  }
 
   @override
   Widget build(BuildContext context) {
-    final titleController = TextEditingController();
-    final amountController = TextEditingController();
-
     return Card(
       child: Container(
         margin: EdgeInsets.all(8),
@@ -28,10 +38,7 @@ class TransactionInput extends StatelessWidget {
             FlatButton(
               child: Text("Add Transaction"),
               textColor: Colors.purple,
-              onPressed: () {
-                handler(
-                    titleController.text, double.parse(amountController.text));
-              },
+              onPressed: submitData,
             )
           ],
         ),
