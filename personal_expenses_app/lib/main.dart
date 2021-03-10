@@ -5,6 +5,7 @@ import 'models/transaction.dart';
 
 void main() {
   runApp(MaterialApp(
+    theme: ThemeData(primarySwatch: Colors.purple, accentColor: Colors.amber),
     home: MyHomePage(),
   ));
 }
@@ -54,8 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text("Expenses"),
         actions: [
@@ -75,7 +75,6 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               child: Card(
                 child: Text("CHART"),
-                color: Colors.blue,
               ),
             ),
             TransactionsList(
@@ -89,6 +88,6 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () => {},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-    ));
+    );
   }
 }
