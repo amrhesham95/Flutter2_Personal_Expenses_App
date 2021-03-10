@@ -5,7 +5,10 @@ import 'models/transaction.dart';
 
 void main() {
   runApp(MaterialApp(
-    theme: ThemeData(primarySwatch: Colors.purple, accentColor: Colors.amber),
+    theme: ThemeData(
+        primarySwatch: Colors.purple,
+        accentColor: Colors.amber,
+        fontFamily: "Quicksand"),
     home: MyHomePage(),
   ));
 }
